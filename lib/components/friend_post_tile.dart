@@ -1,0 +1,46 @@
+import 'package:ch05_scrollable_widgets/components/circle_image.dart';
+import 'package:ch05_scrollable_widgets/models/post.dart';
+import 'package:flutter/material.dart';
+
+class FriendPostTile extends StatelessWidget {
+  final Post post;
+  const FriendPostTile({
+    super.key,
+    required this.post,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // 1
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        // 2
+        CircleImage(
+          imageProvider: AssetImage(post.profileImageUrl),
+          imageRadius: 20,
+        ),
+        // 3
+        const SizedBox(
+          width: 16,
+        ),
+        // 4
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // 6
+              Text(post.comment),
+              // 7
+              Text(
+                '${post.timestamp} mins ago',
+                style: const TextStyle(fontWeight: FontWeight.w700),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
