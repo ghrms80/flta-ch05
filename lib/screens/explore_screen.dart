@@ -1,3 +1,4 @@
+import 'package:ch05_scrollable_widgets/components/components.dart';
 import 'package:ch05_scrollable_widgets/models/explore_data.dart';
 import 'package:flutter/material.dart';
 
@@ -19,12 +20,7 @@ class ExploreScreen extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           // 5
           final recipes = snapshot.data?.todayRecipes ?? [];
-          // TODO: Replace this with TodayRecipeListView
-          return Center(
-            child: Container(
-              child: const Text('Show TodayRecipeListView'),
-            ),
-          );
+          return TodayRecipelistView(recipes: recipes);
         } else {
           // 6
           return const Center(
