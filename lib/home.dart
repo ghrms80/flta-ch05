@@ -1,4 +1,5 @@
 import 'package:ch05_scrollable_widgets/screens/explore_screen.dart';
+import 'package:ch05_scrollable_widgets/screens/recipes_screen.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,7 +14,7 @@ class HomeState extends State<Home> {
 
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
-    // TODO: Replace with RecipesScreen
+    RecipesScreen(),
     Container(color: Colors.green),
     Container(color: Colors.blue),
   ];
